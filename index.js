@@ -37,7 +37,7 @@ app.use((req,res,next)=> {
 app.use((error, req, res, next) => {
     if (!error.status) {
         error.status = 500
-        error.message = "Internal Error Server"    
+        error.message = "Internal Error Server gato"    
     }
     res.status(error.status).json({ status: error.status, message: error.message })
 })
