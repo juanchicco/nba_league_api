@@ -1,7 +1,7 @@
 require("dotenv").config()
 const express = require("express")
 const app = express()
-const port = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000
 const path = require("path")
 const hbs = require("express-handlebars")
 const cors = require("cors")
@@ -42,6 +42,6 @@ app.use((error, req, res, next) => {
     res.status(error.status).json({ status: error.status, message: error.message })
 })
 
-app.listen(port,(err)=> {
-    err ? console.log("Error...",err) : console.log(`App corriendo en http://localhost:${port}`)
+app.listen(PORT,(err)=> {
+    err ? console.log("Error...",err) : console.log(`App corriendo en http://localhost:${PORT}`)
 })
