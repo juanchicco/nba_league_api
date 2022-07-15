@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
-    "dev": "nodemon index"
+    "start": "node index"
   },
   "keywords": [],
   "author": "",
@@ -22,8 +21,5 @@
     "multer": "^1.4.5-lts.1",
     "mysql": "^2.18.1",
     "nodemailer": "^6.7.6"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.18"
   }
 }
