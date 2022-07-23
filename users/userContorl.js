@@ -22,6 +22,7 @@ const register = async(req,res,next) => {
 
 const login = async(req,res,next) => {
     const dbResponse = await loginUser(req.body.userName)
+    console.log(dbResponse)
     if(!dbResponse.length) return next();
     if( await checkPassword(req.body.password, dbResponse[0].password)){
         const user = {
