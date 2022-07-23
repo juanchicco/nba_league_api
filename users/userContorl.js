@@ -5,6 +5,7 @@ const { getAllUsers, registerUser, loginUser, deleteUserById, editUserById } = r
 const url = process.env.url_base
 const nodemailer = require("nodemailer")
 
+
 const listAll = async(req,res,next) => {
     const dbResponse = await getAllUsers();
     if(dbResponse instanceof Error) return next(dbResponse);
@@ -22,7 +23,6 @@ const register = async(req,res,next) => {
 
 const login = async(req,res,next) => {
     const dbResponse = await loginUser(req.body.userName)
-    console.log(dbResponse)
     if(!dbResponse.length) return next();
     if( await checkPassword(req.body.password, dbResponse[0].password)){
         const user = {
